@@ -3,8 +3,7 @@ import struct
 import itertools
 import numpy as np
 
-def parse_mat(mat_file):
-	fp=open(mat_file,"rb")
+def parse_mat(fp):
 	# read header
 	head=fp.read(32)
 	data_type=fp.read(32)
@@ -40,7 +39,8 @@ if __name__ == '__main__':
 		quit()
 	in_filename=sys.argv[1]
 	out_filename=sys.argv[2]
-	np_mat,info=parse_mat(in_filename)
+	fp=open(in_filename,"rb")
+	np_mat,info=parse_mat(fp)
 	print info
 	print np_mat
 	print np_mat.shape
