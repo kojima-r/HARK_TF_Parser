@@ -14,8 +14,8 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     entry_points={
         "console_scripts": [
-            "hark_tf_mat= hark_tf.read_mat:main",
-            "hark_tf_param= hark_tf.read_param:main",
+            "hark-tf-mat= hark_tf.read_mat:main",
+            "hark-tf-param= hark_tf.read_param:main",
        ],
     },
     classifiers=[

@@ -17,14 +17,14 @@ def parse_mat(fp):
     # read data
     mat = []
     for i in itertools.product(*[range(n[j]) for j in range(dim)]):
-        if data_type[0:7] == "complex":
+        if data_type[0:7] == b"complex":
             r_val = struct.unpack("f", fp.read(4))[0]
             i_val = struct.unpack("f", fp.read(4))[0]
             mat.append(r_val + 1j * i_val)
-        elif data_type[0:7] == "float32":
+        elif data_type[0:7] == b"float32":
             val = struct.unpack("f", fp.read(4))[0]
             mat.append(val)
-        elif data_type[0:5] == "int32":
+        elif data_type[0:5] == b"int32":
             val = struct.unpack("f", fp.read(4))[0]
             mat.append(val)
         else:
