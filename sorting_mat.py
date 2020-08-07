@@ -1,12 +1,12 @@
 import sys
 import numpy as np
 import zipfile
-import read_source
+from . import read_source
 import math
 
 
 def apply_permutation_row(permutation,mat):
-	a=permutation.values()
+	a=list(permutation.values())
 	return mat[a]
 
 def permutation_hark_tf(tf_filename):
@@ -26,8 +26,8 @@ def permutation_hark_tf(tf_filename):
 
 if __name__ == '__main__':
 	if len(sys.argv)<2:
-		print >>sys.stderr, "Usage: read_param.py <in: tf.zip(HARK2 transfer function file)>"
+		print("Usage: read_param.py <in: tf.zip(HARK2 transfer function file)>", file=sys.stderr)
 		quit()
 	tf_filename=sys.argv[1]
 	permutation=permutation_hark_tf(tf_filename)
-	print permutation
+	print(permutation)

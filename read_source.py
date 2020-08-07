@@ -15,7 +15,7 @@ def read_hark_tf_source(filename):
 		for el in tree.findall(".//positions"):
 			# format check
 			if el.get("coordinate")!="cartesian":
-				print >>sys.stderr, "WARN: unsupported coordinate:",el.get("coordinate")
+				print("WARN: unsupported coordinate:",el.get("coordinate"), file=sys.stderr)
 			# read positions of microphones
 			for el in el.findall(".//position"):
 				x=el.get("x")
@@ -29,10 +29,10 @@ def read_hark_tf_source(filename):
 if __name__ == '__main__':
 	# argv check
 	if len(sys.argv)<2:
-		print >>sys.stderr, "Usage: read_source.py <in: tf.zip(HARK2 transfer function file)>"
+		print("Usage: read_source.py <in: tf.zip(HARK2 transfer function file)>", file=sys.stderr)
 		quit()
 	# 
 	tf_filename=sys.argv[1]
 	config=read_hark_tf_source(tf_filename)
-	print "# config:",config
+	print("# config:",config)
 

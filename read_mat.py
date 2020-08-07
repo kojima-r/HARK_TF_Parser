@@ -1,8 +1,8 @@
 import sys
 import numpy as np
 import zipfile
-from parse_mat import parse_mat
-import read_source
+from .parse_mat import parse_mat
+from . import read_source
 
 #TF_FILE="transferFunction/separation/tf%05d.mat"
 TF_FILE="transferFunction/localization/tf%05d.mat"
@@ -27,9 +27,9 @@ def read_hark_tf(tf_filename):
 
 if __name__ == '__main__':
 	if len(sys.argv)<2:
-		print >>sys.stderr, "Usage: read_param.py <in: tf.zip(HARK2 transfer function file)>"
+		print("Usage: read_param.py <in: tf.zip(HARK2 transfer function file)>", file=sys.stderr)
 		quit()
 	tf_filename=sys.argv[1]
 	#np.save(out_filename,np_mat)
 	config=read_hark_tf(tf_filename)
-	print config
+	print(config)
