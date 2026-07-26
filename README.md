@@ -4,7 +4,7 @@ A python library for HARK2-format transfer function
 
 ## Notebook
 
-https://colab.research.google.com/drive/1wLBFXoRojyPXRm0u2MD_bo8Z0WF4FvPH?usp=sharing
+[Example](https://drive.google.com/file/d/1JMRQNkEgBlxl_QtrBEO6Q7_jlhAA2ojy/view?usp=sharing)
 
 ## Installation
 
